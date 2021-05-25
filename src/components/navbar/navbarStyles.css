@@ -1,0 +1,23 @@
+i {
+    color: black;
+}
+
+
+
+.nav-item{
+    font-size: large;
+    margin: 5px;
+    padding: 5px;
+}
+
+.navlinks:hover {
+    text-decoration: none;
+}
+
+.profile {
+    color: black;
+}
+
+.navbar-brand {
+    font-size: xx-large;
+}

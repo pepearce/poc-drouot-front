@@ -1,0 +1,10 @@
+a.bottom-line {
+    color: black;
+    border-bottom: thin solid black;
+}
+
+a.bottom-line:hover {
+    text-decoration: none;
+    border-bottom: thin solid red;
+    color: red;
+}
