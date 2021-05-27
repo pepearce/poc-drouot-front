@@ -57,15 +57,15 @@ const Navigation = () => {
                     <ul className="nav navbar-nav mr-auto">
                         <li className="nav-item">
                             <NavLink to='/auctions' className="navlinks text-danger">
-                                VENTES AUX ENCHERES
+                                AUCTIONS
                             </NavLink>
                         </li>
-                        <li className="nav-item">
+                        {/* <li className="nav-item">
                             <NavLink to="/auctions" className=" navlinks text-danger">BUY NOW</NavLink>
-                        </li>
+                        </li> */}
                     </ul>
                 </div>
-                <div className="collapse navbar-collapse navbars" id="navbarRightContent">
+                {/* <div className="collapse navbar-collapse navbars" id="navbarRightContent">
                     <ul className="nav navbar-nav ml-auto">
                         <li className="nav-item">
                             <NavLink to="/auctions" className="text-dark navlinks">BEAUX ARTS</NavLink>                        </li>
@@ -79,7 +79,7 @@ const Navigation = () => {
                             <NavLink to="/auctions" className="text-dark navlinks">LUXE & ART DE VIVRE</NavLink>
                         </li>
                     </ul>
-                </div>
+                </div> */}
             </nav>
             </div>
             

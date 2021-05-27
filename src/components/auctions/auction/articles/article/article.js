@@ -12,10 +12,7 @@ const Article = (props) => {
     const article = useSelector(state => state.article);
     const articles = useSelector(state => state.articles);
     const highestBid = useSelector(state => state.bid);
-    // const [highestBid, setHighestBid] = useState({});
     
-    // const [errorMessage, setErrorMessage] = useState("");
-    // const articleId = props.match.params.id;
     const dispatch = useDispatch();
     dispatch(setArticle(props.location.state.article))
     // let socket = new WebSocket(`ws://localhost:8080/ws/article/${article.ID}`)
@@ -36,10 +33,14 @@ const Article = (props) => {
     //     console.log(error)
     // }
     
+    // If a user is logged in, long poll the highest bid
+    // this is to be replaced when websocket is in place...
     if (user.id !== '') {
         setTimeout(() => {
             fetch(
-                `http://localhost:8080/articles/bid/${article.ID}`
+                `http://localhost:8080/articles/bid/${article.ID}`, {
+                    method: "GET",
+                }
             ).then((response) => {
                 if (response.ok) {
                     return response.json();
@@ -49,9 +50,6 @@ const Article = (props) => {
             }).then((data) => {
                 dispatch(setBid(data.data));
             }).catch(error => {
-                // error.json().then((body) => {
-                //     alert(body.error);
-                // });
                 alert(error)
             })
         }, 1000)
@@ -59,22 +57,12 @@ const Article = (props) => {
     
     useEffect(() => {
         
-        // // Get article
-        // fetch(
-        //     `http://localhost:8080/articles/${articleId}`
-        // ).then((response) => {
-        //     if (response.ok) {
-        //         return response.json();
-        //     }else {
-        //         throw response;
-        //     }
-            
-        // }).then((data) => {
-        //     dispatch(setArticle(data.data));
         // This is to be replaced by websocket connection !!!
         // Get highest bid for article
         fetch(
-            `http://localhost:8080/articles/bid/${article.ID}`
+            `http://localhost:8080/articles/bid/${article.ID}`, {
+                method: 'GET'
+            }
         ).then((response) => {
             if (response.ok) {
                 return response.json();
@@ -84,30 +72,8 @@ const Article = (props) => {
         }).then((data) => {
             dispatch(setBid(data.data));
         }).catch(error => {
-            // error.json().then((body) => {
-            //     alert(body.error);
-            // });
             alert(error)
         })
-        
-            // // Get all articles
-            // fetch(
-            //     `http://localhost:8080/auctions/articles/${data.data.auctionID}`
-            // ).then(response => {
-            //     if (response.ok) {
-            //         return response.json();
-            //     }else {
-            //         throw response;
-            //     }
-            // }).then( (data) => {
-            //     dispatch(setArticles(data.data));
-            // })
-        // }).catch(error => {
-        //     error.json().then((body) => {
-        //         setErrorMessage(body.error);
-        //         return body.error;
-        //     });
-        // })
         
         
     }, [article.ID, dispatch]);
@@ -122,8 +88,10 @@ const Article = (props) => {
         // if (socket.readyState === 1) {
         //     socket.send(JSON.stringify(bid))
         // }else {
-            fetch(`http://localhost:8080/bids`, {method: 'POST', body: JSON.stringify(bid)})
-            .then(response => {
+            fetch(`http://localhost:8080/bids`, {
+                method: 'POST',
+                body: JSON.stringify(bid)
+            }).then(response => {
                 if (response.ok) {
                     return response.json();
                 }else {

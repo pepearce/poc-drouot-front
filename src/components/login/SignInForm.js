@@ -35,14 +35,12 @@ export const SignInForm = () => {
             fetch(`http://localhost:8080/login`, {method: 'POST', body: JSON.stringify(values)})
             .then(response => {
                 if (response.ok) {
-                    return response.json();
+                  return response.json();
                 }else {
                   throw response;
               }
             }).then(response => {
-
               dispatch(login());
-              console.log(response.ID)
               const user = {
                 id: response.ID,
                 firstName: response.firstName,
@@ -51,7 +49,7 @@ export const SignInForm = () => {
                 email: response.email,
                 role: response.role
               }
-              dispatch(setUser(user))
+              dispatch(setUser(user));
               
             }).catch(error => {
               if (error instanceof Promise) {

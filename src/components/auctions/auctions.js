@@ -12,17 +12,16 @@ const Auctions = (props) => {
     const dispatch = useDispatch();
     
     useEffect(() => {
-
         console.log(props.owner)
         if (props.owner !== undefined) {
             fetch(`http://localhost:8080/user/auctions/${props.owner}`)
-        .then(response => {
-            if (response.ok) {
-                return response.json();
-            }
-        }).then(response => {
-            dispatch(setAuctions(response.data))
-        })
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+            }).then(response => {
+                dispatch(setAuctions(response.data))
+            })
         }else {
             fetch('http://localhost:8080/auctions')
             .then(response => {

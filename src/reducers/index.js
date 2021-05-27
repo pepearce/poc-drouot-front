@@ -5,7 +5,6 @@ import AuctionsReducer from './auctionsReducer'
 import ArticlesReducer from './articlesReducer'
 import BidReducer from './bidReducer'
 import ArticleReducer from './articleReducer'
-import { sessionReducer } from 'redux-react-session'
 
 const allReducers = combineReducers({
     login: LoginReducer,
@@ -14,7 +13,6 @@ const allReducers = combineReducers({
     articles: ArticlesReducer,
     article: ArticleReducer,
     bid: BidReducer,
-    session: sessionReducer
 })
 
 export default allReducers
