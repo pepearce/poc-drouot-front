@@ -8,8 +8,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 # Installation
 
-Start [API](https://github.com/pepearce/poc-drouot-back) <br/>
-If nodejs and npm are not installed, install nodjs and npm <br/>
+Start [API](https://github.com/pepearce/poc-drouot-back)  
+If nodejs and npm are not installed, install nodjs and npm  
 In terminal cd to source folder and run :
 ```
 npm install
