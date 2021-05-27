@@ -2,6 +2,18 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Installation
+
+Start API
+If nodejs and npm are not installed, install nodjs and npm <br/>
+In terminal cd to source folder and run :
+```
+npm install
+npm start
+```
+The front end app should be running.
+
+
 ## Available Scripts
 
 In the project directory, you can run:
