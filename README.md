@@ -1,8 +1,12 @@
-# Getting Started with Create React App
+# Front End app for Mini Drouot
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Installation
+- [Installation](#Installation)
+- [Default Users](#Default-Users)
+- [Default React readme content](#Default-Create-react-app-readme-content)
+
+# Installation
 
 Start [API](https://github.com/pepearce/poc-drouot-back) <br/>
 If nodejs and npm are not installed, install nodjs and npm <br/>
@@ -13,7 +17,25 @@ npm start
 ```
 The front end app should be running.
 
+# Default Users
 
+The database is initially seeded with several entries, namely two users :
+
+- root@admin.com (password : password123)
+- john@doe.com (password : password321)
+
+You can log in with one of these users and play around with current functionnalities.</br>
+
+The admin is the seller for both default auctions and has access to the create auction form.</br>
+
+John Doe is a buyer and can only see the auctions and bid on articles.</br>
+
+If you decide to create a new account you can choose a buyer account or a seller account. The seller account can create new auctions (as of writing, this functionnality is not yet implemented).</br>
+</br>
+</br>
+
+
+# Default Create react app readme content 
 ## Available Scripts
 
 In the project directory, you can run:

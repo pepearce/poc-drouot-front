@@ -5,6 +5,7 @@ import * as Yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
 import { setUser } from '../../../actions/user';
 import { logout } from '../../../actions/login';
+import { FormLabel } from 'react-bootstrap';
 
 const UpdateSchema = Yup.object().shape({
   firstName: Yup.string()
@@ -98,17 +99,21 @@ const UpdateForm = () => {
     >
       {({ errors, touched }) => (
         <FromikForm> 
-          <Field className="form-control my-2" name="firstName" type="text"  />
+          <label for="firstName" > First Name</label>
+          <Field className="form-control mb-2" name="firstName" type="text"  />
           {errors.firstName && touched.firstName ? <div>{errors.firstName}</div> : null}
 
-          <Field className="form-control my-2" name="lastName" type="text"  />
+          <label for="lastName" > Last Name</label>
+          <Field className="form-control mb-2" name="lastName" type="text"  />
           {errors.lastName && touched.lastName ? <div>{errors.lastName}</div> : null}
 
-          <Field className="form-control my-2" name="address" type="text" />
+          <label for="address" > Address</label>
+          <Field className="form-control mb-2" name="address" type="text" />
           {errors.address && touched.address ? <div>{errors.address}</div> : null}
 
-          <button className="btn btn-danger pull-right mx-2" onClick={onDelete}>Delete Profile</button>
           <button className="btn btn-info pull-right mx-2" type="submit">Update Profile</button>
+          <button className="btn btn-danger pull-right mx-2" onClick={onDelete}>Delete Profile</button>
+          
         </FromikForm>
       )}
     </Formik>
