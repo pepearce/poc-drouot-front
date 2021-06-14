@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Navigation from './components/navbar/navbar'
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -15,7 +15,29 @@ import Footer from './components/footer/footer';
 import Profile from './components/utilisateur/profile'
 import ProtectedRoute from './ProtectedRoute';
 import CreateAuction from './components/utilisateur/createAuction/createAuction';
+
+
+
+let socket = new WebSocket(`ws://localhost:8080/ws/v1`);
+
+export const getSocket = () => {
+    return socket;
+}
 const App = () => {
+    socket.onopen = () => {
+        console.log("connected");
+    }
+	useEffect(() => {
+    
+        socket.onclose = (event) => {
+            console.log("socket close : ", event);
+        }
+    
+        socket.onerror = (error) => {
+            console.log(error);
+        }
+	})
+
     return (
         <div>
             <Router>

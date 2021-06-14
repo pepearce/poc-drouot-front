@@ -12,12 +12,12 @@ const CreatAuctionSchema = Yup.object().shape({
     .min(2, 'Too Short!')
     .max(20, 'Too long!')
     .required('Required'),
-    category: Yup.string()
+  category: Yup.string()
     .min(2, 'Too Short!')
     .max(20, 'Too long!')
     .required('Required'),
-    startDate: Yup.date(),
-    endDate: Yup.date(),
+  startDate: Yup.date(),
+  endDate: Yup.date(),
    photoURL: Yup.string(),
 })
 
@@ -77,22 +77,31 @@ export const CreateAuction = () => {
     >
       {({ errors, touched }) => (
         <FromikForm> 
+          <label for="title">Title</label>
           <Field className="form-control my-2" name="title" type="text" placeholder="Title" />
           {errors.title && touched.title ? <div>{errors.title}</div> : null}
 
+          <label for="category">Category</label>
           <Field className="form-control my-2" name="category" type="text" placeholder="Category" />
           {errors.category && touched.category ? <div>{errors.category}</div> : null}
 
-          <Field className="form-control my-2" name="startDate" type="date" />
+          <label for="startDate">Start Date</label>
+          <Field className="form-control mb-2" name="startDate" type="date" />
           {errors.startDate && touched.startDate ? <div>{errors.startDate}</div> : null}
-          <Field className="form-control my-2" name="startTime" type="time" />
+
+          <label for="startTime">Start Time</label>
+          <Field className="form-control mb-2" name="startTime" type="time" />
           {errors.startTime && touched.startTime ? <div>{errors.startTime}</div> : null}
 
-          <Field className="form-control my-2" name="endDate" type="date" />
+          <label for="endDate">End Date</label>
+          <Field className="form-control mb-2" name="endDate" type="date" />
           {errors.email && touched.email ? <div>{errors.email}</div> : null}
-          <Field className="form-control my-2" name="endTime" type="time" />
+
+          <label for="endTime">End Time</label>
+          <Field className="form-control mb-2" name="endTime" type="time" />
           {errors.endTime && touched.endTime ? <div>{errors.endTime}</div> : null}
 
+          <label for="photoURL">Photo URL</label>
           <Field className="form-control my-2" name="photoURL" type="text" placeholder="Photo URL" />
           {errors.password && touched.password ? (<div>{errors.password}</div>) : null}
 

@@ -5,7 +5,6 @@ import * as Yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
 import { setUser } from '../../../actions/user';
 import { logout } from '../../../actions/login';
-import { FormLabel } from 'react-bootstrap';
 
 const UpdateSchema = Yup.object().shape({
   firstName: Yup.string()

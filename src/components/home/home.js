@@ -4,6 +4,8 @@ const images = [`${process.env.PUBLIC_URL}/images/DrouotHome2.jpg`,`${process.en
 
 // Just to have a home page
 const Home = () => {
+    
+
    return(
         <>
         <div className="text-center">
