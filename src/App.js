@@ -44,8 +44,8 @@ const App = () => {
             <Navigation/>
                 <main role="main" className="d-flex flex-column min-vh-100">
                     <Switch>
-                        <Route exact path="/" component={Home} />
-                        <Route exact path="/home" component={Home}/>
+                        <Route exact path="/" component={Auctions} />
+                        <Route exact path="/home" component={Auctions}/>
                         <Route exact path="/auctions" component={Auctions}/>
                         <Route path="/auctions/articles/:id" component={Auction}/>
                         <Route path="/article/:id" component={Article}></Route>

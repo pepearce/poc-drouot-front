@@ -6,7 +6,7 @@ const Footer = () => {
     return(
         <footer className="footer position-sticky bottom-0">
             <div className="container text-center">
-            <h4><i className="fa fa-copyright"/> Drouot Digital</h4>
+            <h4><i className="fa fa-copyright"/> AUCTION Mini</h4>
             </div>
         </footer>
         

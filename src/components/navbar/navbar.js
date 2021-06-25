@@ -34,7 +34,7 @@ const Navigation = () => {
                     <button className="navbar-toggler mx-2" type="button" data-toggle="collapse" data-target=".navbars" aria-controls=".navbars" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="fas fa-bars"></span>
                     </button>
-                    <Link to="/home"><h1 className="text-danger"><strong>DROUOT</strong> MINI</h1></Link>
+                    <Link to="/home"><h1 className="text-danger"><strong>AUCTION</strong> MINI</h1></Link>
                 </div>
                 {/* Connexion button, help button (right hand side) */}
                 <div className="collapse navbar-collapse navbars " id="connexion">
